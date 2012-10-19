@@ -3,8 +3,9 @@ class PicturesController < ApplicationController
   end
   
   def show
-    x = params[:id].to_i
-    @pic = picture_data[x - 1]
+    x = params[:id]
+    @pic = Picture.find_by_id(x)
+    
     @width = params[:width]
     @color = params[:color]
   end
@@ -22,6 +23,30 @@ class PicturesController < ApplicationController
     p.save
     
     redirect_to '/pictures'
+  end
+  
+  def delete
+    x = params[:id]
+    Picture.delete(x)
+    
+    redirect_to '/pictures'
+  end
+
+  def edit
+    @kelly = params[:id]
+  end
+
+  def update_record
+       
+    p = Picture.find_by_id(params[:id])    
+    p.update_attributes(:url=>params[:url],:title=>params[:title]) 
+
+    # Picture.update(params[:id], :url=>params[:url],:title=>params[:title])     
+    # p.title = params[:title]
+  
+    p.save
+    
+    redirect_to '/pictures/'
   end
 end
 

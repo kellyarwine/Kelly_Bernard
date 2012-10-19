@@ -1,0 +1,14 @@
+<p><a href="/pictures">Back</a></p>
+
+<h1>Please edit your picture</h1>
+
+<form action="/pictures/edit/<%=@kelly%>" method="post">
+  <label for="url_text_field">New URL:</label>
+  <input type="text" name="url" id="url_text_field">
+  
+  <label for="title_text_field">New Title:</label>
+  <input type="text" name="title" id="title_text_field">
+  
+  <input type="submit" name="submit" value="Submit Form">
+  <a href="/pictures">or Cancel</a>
+</form>

@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+header {
+  border-bottom: 2px solid #CCC;
+  margin-bottom: 0px;
+}
+header a {text-decoration: none; color: black;}

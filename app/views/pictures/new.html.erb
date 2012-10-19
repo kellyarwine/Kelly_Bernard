@@ -1,5 +1,26 @@
-<form action="/pictures" method="post">
-  URL: <input type="text" name="url">
-  Title: <input type="text" name="title">
-  <input type="submit" name="submit" value="Submit Form">
-</form>
+<p><a href="/pictures">Back</a></p>
+
+<!-- <form action="/pictures" method="post"> -->
+<%= form_tag "/pictures", :method => "post" do %>
+  
+  
+  <!-- <label for="url_text_field">URL:</label> -->
+  <%= label_tag :url, "URL" %>
+
+  <!-- <input type="text" name="url" id="url_text_field"> -->
+  <%= text_field_tag :url %>
+  
+  <!-- <label for="title_text_field">Title:</label> -->
+  <%= label_tag :title, "Title" %>
+  
+  <!-- <input type="text" name="title" id="title_text_field"> -->
+  <%= text_field_tag :title %>
+    
+  <!-- <input type="submit" name="submit" value="Submit Form"> -->
+  <%= submit_tag %>
+  
+  <!-- <a href="/pictures">or Cancel</a> -->
+  <%= link_to "or Cancel", "/pictures" %>
+  
+<!-- </form> -->
+<% end %>
